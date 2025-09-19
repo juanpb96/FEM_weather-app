@@ -1,5 +1,6 @@
 {
-  "name": "fem_weather-app",
+  "homepage": "https://juanbonilla-fem-weather-app.netlify.app/FEM_weather-app",
+  "name": "fem-weather-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
