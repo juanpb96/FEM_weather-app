@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const BASE_PATH = "/FEM_weather-app";
+const BASE_PATH = process.env.WEATHER_APP_PATH || "";
 
 export default function Home() {
   return (
