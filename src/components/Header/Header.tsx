@@ -7,7 +7,7 @@ export function Header() {
     <header>
       <Image
         src={`${BASE_PATH}/logo.svg`}
-        alt=""
+        alt="Weather app logo"
         width={138}
         height={28}
         priority
