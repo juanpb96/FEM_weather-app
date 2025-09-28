@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords:
     "weather, forecast, hourly, daily, temperature, wind speed, humidity, precipitation, metric, imperial, celsius, fahrenheit, weather app",
   authors: [{ name: "Juan Bonilla", url: "juanbonilla.me" }],
-  icons: `${BASE_PATH}/favicon.ico`, // TODO: Remove this once the Issue #9 is resolved and move the favicon back to the /app
+  icons: `${BASE_PATH}/favicon.ico`,
 };
 
 export default function RootLayout({
