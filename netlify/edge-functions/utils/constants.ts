@@ -1,5 +1,3 @@
-export const BASE_PATH = process.env.WEATHER_APP_PATH || "";
-
 const HEADER_PREFIX = "geo";
 
 export const GEO_HEADERS = {
