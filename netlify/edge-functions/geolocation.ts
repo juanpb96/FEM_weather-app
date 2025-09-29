@@ -1,4 +1,4 @@
-import { GEO_HEADERS } from "@/constants";
+import { GEO_HEADERS } from "../../src/constants.ts";
 import type { Config, Context } from "@netlify/edge-functions";
 
 export default async function handler(request: Request, context: Context) {
