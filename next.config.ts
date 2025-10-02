@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "",
-  assetPrefix: process.env.WEATHER_APP_PATH || "",
+  basePath: "/FEM_weather-app",
 };
 
 export default nextConfig;
