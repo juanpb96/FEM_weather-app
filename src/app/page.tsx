@@ -5,14 +5,22 @@ import { HourlyForecast } from "@/components/HourlyForecast";
 import { LocationSearchBar } from "@/components/LocationSearchBar";
 import { TodayOverview } from "@/components/TodayOverview";
 import { GEO_HEADERS } from "@/constants";
+import { getWeatherData } from "@/services/weather";
 import { headers } from "next/headers";
 
 export default async function Home() {
   const nextHeaders = await headers();
   const country = nextHeaders.get(GEO_HEADERS.country) || "";
   const city = nextHeaders.get(GEO_HEADERS.city) || "";
-  const latitude = nextHeaders.get(GEO_HEADERS.latitude);
-  const longitude = nextHeaders.get(GEO_HEADERS.longitude);
+  const latitude = nextHeaders.get(GEO_HEADERS.latitude) || "";
+  const longitude = nextHeaders.get(GEO_HEADERS.longitude) || "";
+
+  const weatherData = await getWeatherData(latitude, longitude);
+  console.log(weatherData);
+
+  if (!weatherData) {
+    return <>Error</>;
+  }
 
   return (
     <div>
