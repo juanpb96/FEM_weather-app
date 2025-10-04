@@ -8,6 +8,10 @@ vi.mock("next/headers", () => ({
   })),
 }));
 
+vi.mock("@/services/weather", () => ({
+  getWeatherData: vi.fn(() => Promise.resolve({})),
+}));
+
 test("Logo should be present", async () => {
   render(await Page());
   expect(screen.getByRole("img", { name: "Weather app logo" })).toBeDefined();
