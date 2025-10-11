@@ -3,13 +3,42 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --neutral-0: #ffffff;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-bricolage-grotesque);
+}
+
+@layer components {
+  .text-preset-1 {
+    @apply font-sans;
+    font-weight: var(--semi-bold);
+    font-style: italic;
+    font-size: 96px;
+    line-height: 100%;
+    letter-spacing: -2px;
+  }
+
+  .text-preset-4 {
+    @apply font-sans;
+    font-weight: var(--bold);
+    font-size: 1.75rem; /* 28px */
+    line-height: 120%;
+  }
+
+  .text-preset-6 {
+    @apply font-sans;
+    font-weight: var(--medium);
+    font-size: 1rem; /* 16px */
+    line-height: 120%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

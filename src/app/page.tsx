@@ -10,10 +10,13 @@ import { headers } from "next/headers";
 
 export default async function Home() {
   const nextHeaders = await headers();
-  const country = nextHeaders.get(GEO_HEADERS.country) || "";
-  const city = nextHeaders.get(GEO_HEADERS.city) || "";
-  const latitude = nextHeaders.get(GEO_HEADERS.latitude) || "";
-  const longitude = nextHeaders.get(GEO_HEADERS.longitude) || "";
+  const country =
+    nextHeaders.get(GEO_HEADERS.country) || process.env.COUNTRY || "";
+  const city = nextHeaders.get(GEO_HEADERS.city) || process.env.CITY || "";
+  const latitude =
+    nextHeaders.get(GEO_HEADERS.latitude) || process.env.LATITUDE || "";
+  const longitude =
+    nextHeaders.get(GEO_HEADERS.longitude) || process.env.LONGITUDE || "";
 
   const weatherData = await getWeatherData(latitude, longitude);
   console.log(weatherData);
@@ -33,7 +36,13 @@ export default async function Home() {
       <LocationSearchBar />
       <main>
         <div>
-          <TodayOverview city={city} country={country} />
+          <TodayOverview
+            city={city}
+            country={country}
+            temperature={weatherData.current.temperature_2m}
+            temperatureUnit={weatherData.current_units.temperature_2m}
+            weatherCode={weatherData.current.weather_code}
+          />
           <CurrentConditions />
           <DailyForecast />
         </div>
